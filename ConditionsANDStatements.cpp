@@ -206,32 +206,49 @@
 
 /*                                            PRACTICE QUESTION CALCULTOR START HERE USING SWICH CASES ONLY                                   */
 
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int a;
+//     int b;
+//     char op;
+//     cout << "Enter A" << endl;
+//     cin >> a;
+//     cout << "Enter B" << endl;
+//     cin >> b;
+//     cout << "Enter Operator" << endl;
+//     cin >> op;
+//     switch (op)
+//     {
+//     case '+': cout << (a+b) << endl;
+//         break;
+//     case '-': cout << (a-b) << endl;
+//         break;
+//     case '/': cout << (a/b) << endl;
+//         break;
+//     case '*': cout << (a*b) << endl;
+//         break;
+    
+//     default: cout << "INVALID OPERATOR";
+//         break;
+//     }
+    
+//     return 0;
+// }
+/*                         CONDITIONS AND STATEMENT ENDS HERE...                                        */
+
+
+/*                                      LOOPS STARTS HERE...                                            */
+
+
 #include <iostream>
 using namespace std;
 int main() {
-    int a;
-    int b;
-    char op;
-    cout << "Enter A" << endl;
-    cin >> a;
-    cout << "Enter B" << endl;
-    cin >> b;
-    cout << "Enter Operator" << endl;
-    cin >> op;
-    switch (op)
-    {
-    case '+': cout << (a+b) << endl;
-        break;
-    case '-': cout << (a-b) << endl;
-        break;
-    case '/': cout << (a/b) << endl;
-        break;
-    case '*': cout << (a*b) << endl;
-        break;
-    
-    default: cout << "INVALID OPERATOR";
-        break;
+    int num;
+    for(num=1; num<=100; num++) {
+        cout << num  << " ";
     }
-    
+    cout << endl;
+    cout << num << "LOOP END"; 
     return 0;
 }
