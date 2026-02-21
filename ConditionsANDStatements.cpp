@@ -241,14 +241,69 @@
 /*                                      LOOPS STARTS HERE...                                            */
 
 
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int num;
+//     for(num=1; num<=100; num++) {
+//         cout << num  << " ";
+//     }
+//     cout << endl;
+//     cout << num << "LOOP END";   
+//     return 0;
+// }
+
+//                       loop for print name according to my choice number
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     string text;
+//     cout << "Enter Something to print :";
+//     cin >> text;
+//     for(int i =1; i<=5; i++) {
+//         cout << text << endl;
+//     }
+//     return 0;
+// }
+
+//                       loop for print name according to user's choice number
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     string text;
+//     int times;
+//     cout << "Enter Something to print :";
+//     cin >> text;
+//     cout << "Enter how many times you want to print :";
+//     cin >> times;
+//     for(int i =1; i<= times; i++) {
+//         cout << text << endl;
+//     }
+// }
+
+//                    print a number till N
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int n;
+//     cout << "Enter till how many times you want to print :";
+//     cin >> n;
+//     for(int i =1; i<= n; i++) {
+//         cout << i << " ";
+//     }
+// }
+
+//                                       SUM OF N NO.
 #include <iostream>
 using namespace std;
 int main() {
-    int num;
-    for(num=1; num<=100; num++) {
-        cout << num  << " ";
+    int n;
+    cout << "Enter till how many times you want to print :";
+    cin >> n;
+    int sum = 0;
+    for(int i =1; i<= n; i++) {
+        sum = sum + i;
     }
-    cout << endl;
-    cout << num << "LOOP END"; 
-    return 0;
+    cout << "Sum = " << sum ;
 }
