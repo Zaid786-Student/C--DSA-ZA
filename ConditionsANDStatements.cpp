@@ -253,7 +253,7 @@
 //     return 0;
 // }
 
-//                       loop for print name according to my choice number
+//                       Loop for print name according to my choice number
 // #include <iostream>
 // using namespace std;
 // int main() {
@@ -295,15 +295,106 @@
 // }
 
 //                                       SUM OF N NO.
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int n;
+//     cout << "Enter till how many times you want to print :";
+//     cin >> n;
+//     int sum = 0;
+//     for(int i =1; i<= n; i++) {
+//         sum = sum + i;
+//     }
+//     cout << "Sum = " << sum ;
+// }
+
+//                          while loops Start here
+
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int count =1;
+//     while(count < 13){
+//         cout << "Apna College" << endl;
+//         count ++;
+//     }
+//     return 0;
+// }
+
+
+//                         Print Square Using Stars Only
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int n;
+//     for(n = 1; n<=4; n++){
+//         cout << "****" << endl;
+//     }
+//     return 0;
+// }
+
+//                       Print Number From N to 1
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int n;
+//     cin >> n ;
+//     for(n; n>=1; n--){
+//         cout << n << endl;
+//     }
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int n;
+//     cin >> n ;
+//     for(n; n>=1; n--){
+//         cout << n << endl;
+//     }
+//     return 0;
+// }
+
+//                              PRACTICE QUESTIONS STARTS HERE
+
+//                Print the sum of digits of number using While loop
+// Number is 10829
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int i = 12345;
+//     int digSum = 0;
+//     while(i >0 ) {
+//         int lastDig = i%10;
+//         digSum += lastDig;
+//         i = i/10;
+
+//         // int sum+= lastDig;
+//         // i = i/10;
+//     }
+//     cout << "Sum Of all digit is " << digSum <<endl;
+//     return 0;
+// }
+
+//                Print the sum of odd digits of number using While loop
+
 #include <iostream>
 using namespace std;
 int main() {
-    int n;
-    cout << "Enter till how many times you want to print :";
-    cin >> n;
-    int sum = 0;
-    for(int i =1; i<= n; i++) {
-        sum = sum + i;
+    int n = 10829;
+    int oddDigSum = 0;
+    while(n > 0) {
+        int lastDig = n%10;
+        if (lastDig %2 != 0){
+            oddDigSum += lastDig;
+        }
+        n = n / 10;
     }
-    cout << "Sum = " << sum ;
+    cout << "Sum = "<< oddDigSum << endl;
+    return 0;
 }
