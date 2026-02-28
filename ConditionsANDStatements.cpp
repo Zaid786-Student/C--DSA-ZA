@@ -383,18 +383,130 @@
 
 //                Print the sum of odd digits of number using While loop
 
-#include <iostream>
-using namespace std;
-int main() {
-    int n = 10829;
-    int oddDigSum = 0;
-    while(n > 0) {
-        int lastDig = n%10;
-        if (lastDig %2 != 0){
-            oddDigSum += lastDig;
-        }
-        n = n / 10;
-    }
-    cout << "Sum = "<< oddDigSum << endl;
-    return 0;
-}
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int n = 10829;`
+//     int oddDigSum = 0;
+//     while(n > 0) {
+//         int lastDig = n%10;
+//         if (lastDig %2 != 0){
+//             oddDigSum += lastDig;
+//         }
+//         n = n / 10;
+//     }
+//     cout << "Sum = "<< oddDigSum << endl;
+//     return 0;
+// }
+
+//                Print the digits of a given number in reverese using While loop
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int n = 12345;
+//     while(n > 0) {
+//         int i = n%10;
+//         cout << i << "";
+//         n = n/10;
+//     }
+//     return 0;
+// }
+
+//                Print the digits of a given number in reverese using While loop
+
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int n = 12345;
+//     int result = 0;
+//     while(n > 0) {
+//         int lastDig = n%10;
+//         result = result*10 + lastDig;
+//         n = n/10;
+//     }
+//     cout << result << endl;
+//     return 0;
+// }
+
+/*                         WHILE LOOP ENDS HERE                                                       */
+/*                        DO WHILE LOOP STARTS HERE                                                       */
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int i = 1;
+//     do{
+//         cout << i << " ";
+//         i++;
+//     }while(i<=5);
+//     return 0;
+// }
+
+//                             BREAK STATEMENT
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int i = 1;
+//     while(i<=10){
+//         if (i == 3) {
+//             break;
+//         }
+//         cout << i << " ";
+//         i++;
+//     }
+//     cout << "out of loop now" << endl;
+//     return 0;
+// }
+
+//       PRACTICE QUESTION : WAP where user can keep ntering numbers till they enter a multiple of 10
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int userInput;
+//     do{
+//         cout << "Enter a Number" << endl;
+//         cin >> userInput;
+//         if(userInput % 10 == 0){
+//             break;
+//         }
+//         cout << "You Entered "<< userInput << endl;
+//     } while(true);
+
+//     return 0;
+// }
+
+//                                     CONTINUE STATEMENT
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     for(int i =1; i<=10; i++){
+//         if(i == 3){
+//             continue;
+//         }
+//         cout << i << endl;
+//     }
+//     return 0;
+// }
+//          Everything is print except 3
+
+//  PRACTICE QUESTION : WAP to show entered no. by user except multiple of 10.
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int n;
+//     while (true){
+//         cout << "Enter Your Number"<< endl;
+//         cin >> n;
+//         if(n % 10 == 0) {
+//             continue;
+//         } 
+//         cout << "You Entered " << n << endl;
+//     }
+//     return 0;
+// }
