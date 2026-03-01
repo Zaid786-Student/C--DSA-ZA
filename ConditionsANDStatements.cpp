@@ -510,3 +510,47 @@
 //     }
 //     return 0;
 // }
+
+
+//                           CHECKING THE NUMBER IS PRIME OR NOT
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int n;
+//     cout << "Enter No. " << endl;
+//     cin >> n;
+//     for(int x= 2; x <= n-1; x++){
+//         if(n%x == 0) { // x is a factor of n , x is non prime, x completely devide x
+//             cout << "The Given No. is composite (Not Prime) " << n << endl;
+//             return 0;
+//         } 
+//     }
+//     cout << n << " Given No. is Prime";
+//     return 0;
+// }
+
+//                           CHECKING THE NUMBER IS PRIME OR NOT IN DIFFERENT WAY
+
+
+#include <iostream>
+#include <cmath> // for sqrt function 
+using namespace std;
+
+int main() {
+    int n = 17;
+    bool isPrime = true;
+    for(int x= 2; x <= sqrt(n); x++){
+        if(n % x == 0) { // x is a factor of n , x is non prime, x completely devide x
+            isPrime = false;
+            break;
+        } 
+    }
+    if(isPrime){
+        cout << n << " Given No. is Prime";
+    } else {
+        cout << "The Given No. is composite (Not Prime) " << n << endl;
+    }
+    return 0;
+}
