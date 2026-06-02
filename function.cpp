@@ -209,30 +209,162 @@
 
 //         PRACTICE QUESTION: WAF TO PRINT ALL PRIME NO. FROM 2 TO N
 
+// #include<iostream>
+// using namespace std;
+
+// bool isPrime(int n){
+//     if(n == 1){
+//         return false;
+//     }
+//     for(int i = 2; i*i<=n; i++){
+//         if(n%i == 0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// void allPrime(int n){
+//     // all prime no. from 2 to n
+//     for(int i=2; i<=n; i++){
+//         if(isPrime(i)){ // true
+//             cout << i << " ";
+//         }
+//     }
+//     cout << endl;
+// }
+// int main() {
+//     allPrime(100);
+//     return 0;
+// }
+
+//                  HOMEWORK QUESTIONS STARTS HERE
+//         WAF TO CHECK IF A NO. IS PALINDROME OR NOT
+// #include<iostream>
+// using namespace std;
+// int revrese(int n){
+//     int revNumber = 0;
+
+//     while (n>0)
+//     {
+//         int lastDig = n%10;
+//         revNumber = revNumber*10 + lastDig;
+//         n = n/10;
+//     }
+//     return revNumber;
+// }
+
+// bool isPalindrome(int num){
+//     int revNum = revrese(num);
+//     if (revNum == num)
+//     {
+//         return true;
+//     } else{
+//         return false;
+//     }
+    
+// }int main() {
+//     cout << isPalindrome(125);
+//     cout << isPalindrome(121);
+//     return 0;
+// }
+
+//         WAF TO CALCULATE THE SOME OF DIGITS OF A NO.
+
+// #include<iostream>
+// using namespace std;
+// int digSum(int n){
+//     int sum = 0;
+//     while (n > 0)
+//     {
+//         int lasDig = n%10;
+//         sum = sum + lasDig;
+//         n = n/10;
+//     }
+    
+//     return sum;
+// }
+// int main(){
+//     cout << "The sum of given digits are : " << digSum(456);
+// }
+
+//              WAF TO GET THE OUTPUT a^2+b^2+2*a*b USING 2 PARAMETER a & b
+// #include<iostream>
+// using namespace std;
+// int cal(int a, int b){
+//     int output = (a*a)+(b*b)+(2*a*b);
+//     return output;
+// }
+// int main() {
+//     cout << "Square of a+b is :" << cal(2,3);
+//     return 0;
+// }
+
+//    WAF TO ACCEPT A CHARACTER AS PARAMETER AND RETURN NEXT CHARACTER AS RESULT/OUTPUT
+// #include<iostream>
+// using namespace std;
+// char alpha(char ch){
+//     if(ch == 'z'){
+//         return 'a'; // if the input is z or Z then return the same character
+//     }
+//     if(ch == 'Z'){
+//         return 'A';
+//     }
+//     char newChar = ch +1;
+//     return newChar;
+// }
+// int main() {
+//     char ch;
+//     cout << "Enter a character" << endl;
+//     cin >> ch;
+//     cout << "The next character will be "<< alpha(ch);
+//     return 0;
+// }
+
+
+
+//                          BINARY NO. SYSTEM
+//                           BINARY TO DECIMAL
+// #include<iostream>
+// using namespace std;
+// int binToDec(int n){
+//     int decNum = 0;
+//     int power = 1; // 2^0 = 1
+//     while (n > 0)
+//     {
+//         int lastDig = n%10;
+//         decNum = decNum + lastDig*power;
+//         power = power*2; // power of 2 increases by 1 in each iteration
+//         n = n/10;
+//     }
+//     return decNum;
+// }
+// int main() {
+//     int n;
+//     cout << "Enter a binary no. : " << endl;
+//     cin >> n;
+//     cout << "The decimal no. is : " << binToDec(n) << endl;
+//     return 0;
+// }
+
+//                           DECIMAL TO BINARY
 #include<iostream>
 using namespace std;
+int decToBin(int decimal){
+    int n = decimal;
+    int power = 1; //10^0 = 1
+    int binNum = 0;
 
-bool isPrime(int n){
-    if(n == 1){
-        return false;
+    while (n > 0)
+    {
+        int lastDig = n%2;
+        binNum = binNum + lastDig*power;
+        n = n/2;
+        power = power*10;
     }
-    for(int i = 2; i*i<=n; i++){
-        if(n%i == 0){
-            return false;
-        }
-    }
-    return true;
+    cout << binNum;
+    
 }
-void allPrime(int n){
-    // all prime no. from 2 to n
-    for(int i=2; i<=n; i++){
-        if(isPrime(i)){ // true
-            cout << i << " ";
-        }
-    }
-    cout << endl;
-}
-int main() {
-    allPrime(100);
+int main(){
+    decToBin(20);
     return 0;
 }
