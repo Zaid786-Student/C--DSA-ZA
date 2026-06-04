@@ -6,7 +6,6 @@
 //     int arr[50] = {1,2,3,4,5}; // DECLARING AN ARRAY OF SIZE 50
 //     cout << arr[0] << endl; // ACCESSING THE FIRST ELEMENT OF THE ARRAY
 //     cout << arr[1] << endl; // ACCESSING THE SECOND ELEMENT OF THE ARRAY
-//     cout << arr[2] << endl; // ACCESSING THE THIRD ELEMENT OF THE ARRAY
 //     cout << arr[3] << endl; // ACCESSING THE FOURTH ELEMENT OF THE ARRAY
 //     cout << arr[4] << endl; // ACCESSING THE FIFTH ELEMENT OF THE ARRAY
 //     cout << arr[5] << endl; // ACCESSING THE SIXTH ELEMENT OF THE ARRAY (UNINITIALIZED, MAY CONTAIN GARBAGE VALUE) or 0 (IF GLOBAL OR STATIC)
@@ -127,21 +126,21 @@
 //     return 0;
 // }
 
-#include<iostream>
-using namespace std;
-int searchKey(int *arr, int n, int key){
-    for(int i=0; i<n; i++){
-        if (arr[i] == key){
-            return i;
-        }
+// #include<iostream>
+// using namespace std;
+// int searchKey(int *arr, int n, int key){
+//     for(int i=0; i<n; i++){
+//         if (arr[i] == key){
+//             return i;
+//         }
 
-    }
-    return -1;
-}
-int main(){
-    int arr[] = {2, 4, 6, 8, 10, 12, 14, 16};
-    int n = sizeof(arr)/sizeof(int);
+//     }
+//     return -1;
+// }
+// int main(){
+//     int arr[] = {2, 4, 6, 8, 10, 12, 14, 16};
+//     int n = sizeof(arr)/sizeof(int);
 
-    cout << searchKey(arr, n, 18);
-    return 0;
-}
+//     cout << searchKey(arr, n, 18);
+//     return 0;
+// }
