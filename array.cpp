@@ -144,3 +144,171 @@
 //     cout << searchKey(arr, n, 18);
 //     return 0;
 // }
+
+//                         REVERESE AN ARRAY WITH EXTRA SPACE
+// #include<iostream>
+// using namespace std;
+// void printArr(int *arr, int n){
+//     for(int i = 0; i<n; i++){
+//         cout << arr[i] << ",";
+//     }
+//     cout << endl;
+// }
+
+// int main() {
+//     int arr[] = {5,4,3,9,2};
+//     int n = sizeof(arr)/ sizeof(int);
+
+//     int copyArr[n];
+//     for(int i = 0; i <n; i++){
+//         int j = n-i-1;
+//         copyArr[i] = arr[j];
+//     }
+//     for(int i = 0; i<n; i++){
+//         arr[i] = copyArr[i];
+//     }
+//     printArr(arr, n);
+//     return 0;
+// }
+
+//                         REVERSE AN ARRAY without extra space
+
+// #include<iostream>
+// using namespace std;
+// void swappingElement(int arr[], int start, int end){
+//     int temp = arr[start];
+//     arr[start] = arr[end];
+//     arr[end] = temp;
+// }
+// int main(){
+//     int arr[] = {5,4,3,9,2};
+//     int n = sizeof(arr)/ sizeof(int);
+//     int start = 0;
+//     int end = n - 1;
+//     while(start < end){
+//         // swappingElement(arr, start, end);         //METHOD 1
+//         // swap(arr[start], arr[end]);  //ALSO WE CAN USE ONE LINE TO SWAP  METHOD 2
+//         start++;
+//         end--;
+//     }
+//     for(int i = 0; i < n; i++){
+//         cout << arr[i] << ",";
+//     }
+//     return 0;
+// }
+
+//                                BINARY SEARCH IN AN ARRAY
+// #include <iostream>
+// using namespace std;
+
+// int binSearch(int *arr, int n, int key){
+//     int start = 0;
+//     int end = n-1;
+
+//     while(start <= end){
+//         int mid = (start+end) / 2;
+//         if(arr[mid] == key){
+//             cout << "the given key is in index " << mid << endl;
+//             return mid;
+//         } else if(arr[mid] < key){
+//             start = mid +1;
+//         } else{
+//             end = mid -1;
+//         }
+//     }
+//     return -1;
+// }
+// int main() {
+//     int arr[] = {2,4,6,8,10,12,14,16};
+//     int n = sizeof(arr)/sizeof(int);
+//     cout << binSearch(arr, n, 12) << endl;
+//     return 0;
+// }
+
+//                                  POINTER ARITHMETIC 1
+
+// #include<iostream>
+// using namespace std;
+
+// int main() {
+//     int cha = 'b';
+//     int *chptr = &cha;
+//     int a = 10;
+//     int *aptr = &a;
+
+//     cout << aptr << endl; //0x61ff08 
+//     aptr++; //1 int++
+//     cout << aptr << endl; //0x61ff0c   here there is a 4byte difference
+    
+//     cout << chptr << endl; 
+//     chptr--; //1 ch--
+//     cout << chptr << endl; 
+    
+//     return 0;
+// }
+
+//                                ARITHMETIC OPERATION 2 
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     int a = 5;
+//     int *ptr = &a;
+
+//     cout << ptr << endl; //0x61ff08
+//     cout << (ptr+3) << endl; //0x61ff14
+//     cout << &a;
+//     return 0;
+// }
+
+//                          CODE FOR SUB ARRAY AND SUB ARRAY ELEMENTS
+
+// #include<iostream>
+// using namespace std;
+
+// void printSubArray(int *arr, int n){
+//     for(int start = 0; start < n; start++){
+//         for(int end = start; end<n; end++){
+//            // cout << "("<<start << "," << end << ") "; // NO. OF SUB ARRAY
+//             for(int i = start; i<=end; i++){
+//                 cout << arr[i]; // subarray elements also 
+//             }
+//             cout << ", ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+// int main(){
+//     int arr[5] = {1,2,3,4,5};
+//     int n = 5;
+//     printSubArray(arr,n);
+//     return 0;
+// }
+
+//                     CODE FOR MAX SUM SUB ARRAY
+
+#include<iostream>
+using namespace std;
+
+void maxSubarraySum(int *arr, int n){
+    int maxSum = INT8_MIN;
+    for(int start = 0; start < n; start++){
+        for(int end = start; end < n; end++){
+            int sum = 0;
+            for(int i = start; i <= end; i++){
+                sum = sum + arr[i];
+            }
+            cout << sum << ", ";
+            maxSum = max(maxSum, sum);
+        }
+        cout << endl;
+    }
+    cout << "Maximum subarray sum =" << maxSum << endl;
+}
+int main(){
+    int arr[6] = {2, -3, 6, -5, 4, 2};
+    int n = sizeof(arr) / sizeof(int);
+    maxSubarraySum(arr, n);
+    return 0;
+}
