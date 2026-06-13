@@ -288,27 +288,139 @@
 
 //                     CODE FOR MAX SUM SUB ARRAY
 
+// #include<iostream>
+// using namespace std;
+
+// void maxSubarraySum(int *arr, int n){
+//     int maxSum = INT8_MIN;
+//     for(int start = 0; start < n; start++){
+//         for(int end = start; end < n; end++){
+//             int sum = 0;
+//             for(int i = start; i <= end; i++){
+//                 sum = sum + arr[i];
+//             }
+//             cout << sum << ", ";
+//             maxSum = max(maxSum, sum);
+//         }
+//         cout << endl;
+//     }
+//     cout << "Maximum subarray sum =" << maxSum << endl;
+// }
+// int main(){
+//     int arr[6] = {2, -3, 6, -5, 4, 2};
+//     int n = sizeof(arr) / sizeof(int);
+//     maxSubarraySum(arr, n);
+//     return 0;
+// }
+
+//                     CODE FOR MAX SUM SUB ARRAY OPTIMIZED
+
+// #include<iostream>
+// using namespace std;
+
+// void maxSubarraySum2(int *arr, int n){
+//     int maxSum = INT8_MIN;
+//     for(int start = 0; start < n; start++){
+//         int sum = 0;
+//         for(int end = start; end < n; end++){
+//             sum += arr[end];
+//             maxSum = max(maxSum, sum);
+//         }
+//     }
+
+//     cout << "Maximum subarray sum =" << maxSum << endl;
+// }
+// int main(){
+//     int arr[6] = {2, -3, 6, -5, 4, 2};
+//     int n = sizeof(arr) / sizeof(int);
+//     maxSubarraySum2(arr, n);
+//     return 0;
+// }
+
+//                          KADANE'S ALGORITHMS
+// #include<iostream>
+// using namespace std;
+
+// void maxSubarraySum3(int *arr, int n){
+//     int maxSum = INT8_MIN;
+//     int currentSum = 0;
+
+//     for(int i = 0; i<n; i++){
+//         currentSum += arr[i];
+//         maxSum = max(currentSum, maxSum);
+//         if (currentSum < 0){
+//             currentSum = 0;
+//         }
+//     }
+//     cout << "Maximum subarray sum =" << maxSum << endl;
+// }
+// int main(){
+//     int arr[6] = {2, -3, 6, -5, 4, 2};
+//     int n = sizeof(arr) / sizeof(int);
+
+//     maxSubarraySum3(arr, n);
+//     return 0;
+// } 
+
+// PRACTICE PROBLEM                     BUY AND SELL STOCK
+// #include<iostream>
+// #include <climits>
+// using namespace std;
+// void maxProfit(int *price , int n){
+//     int bestBuy[100000];
+//     bestBuy[0] = INT_MAX;
+//     for(int i =1; i< n; i++){
+//         bestBuy[i] = min(bestBuy[i-1], price[i-1]);
+//     }
+//     int maxProfit = 0;
+//     for(int i = 0; i<n; i++){
+//         int currProfit = price[i] - bestBuy[i];
+//         maxProfit = max(maxProfit, currProfit);
+//     }
+//     cout << "Max Profit = " << maxProfit << endl;
+// }
+// // O(n+n) = O(2n) = O(n) = TIME COMPLEXITY
+// int main(){
+//     int price[6] = {7, 1, 5, 3, 6, 4};
+//     int n = sizeof(price)/sizeof(int);
+//     maxProfit(price, n);
+//     return 0;
+// } 
+
+// PRACTICE PROBLEM                     TRAPPING RAINWATER
 #include<iostream>
 using namespace std;
+#include <climits>
 
-void maxSubarraySum(int *arr, int n){
-    int maxSum = INT8_MIN;
-    for(int start = 0; start < n; start++){
-        for(int end = start; end < n; end++){
-            int sum = 0;
-            for(int i = start; i <= end; i++){
-                sum = sum + arr[i];
-            }
-            cout << sum << ", ";
-            maxSum = max(maxSum, sum);
-        }
-        cout << endl;
+int trap(int *heights, int n){
+    int leftMax[20000], rightMax[20000];
+    leftMax[0] = heights[0];
+    rightMax[n-1] = heights[n-1];
+    int minimum[20000] = {0};
+    for(int i = 1; i<n; i++){
+        leftMax[i] = max(leftMax[i-1], heights[i-1]);
     }
-    cout << "Maximum subarray sum =" << maxSum << endl;
+    
+    for(int i = n-2; i>=0; i--){
+        rightMax[i] = max(rightMax[i+1], heights[i+1]);
+        
+    }
+    int waterTrap = 0;
+    for(int i = 0; i<n; i++){
+        minimum[i] = min(leftMax[i], rightMax[i]);
+        //cout << minimum[i] << ", " << endl;
+        int currWater = minimum[i] - heights[i];
+        if(currWater > 0){
+            waterTrap += currWater;
+        }
+    }
+    cout << "Water Trap in a valley is : " << waterTrap << endl; 
+    return waterTrap;
+    
 }
 int main(){
-    int arr[6] = {2, -3, 6, -5, 4, 2};
-    int n = sizeof(arr) / sizeof(int);
-    maxSubarraySum(arr, n);
+    int heights[7] = {4, 2, 0, 6, 3, 2, 5};
+    int n = sizeof(heights)/ sizeof(int);
+    trap(heights, n);
     return 0;
 }
