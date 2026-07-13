@@ -146,25 +146,148 @@
 //     return 0;
 // }
 //              PRINT A NO. X TO THE POWER OF N
-#include <iostream>
-#include <vector>
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// int power(int x, int n) {
+//     if(n == 0) {
+//         return 1;
+//     }
+//     int halfPower = power(x, n/2);
+//     int halfPowerSq = halfPower * halfPower;
+//     if(n%2 != 0) {
+//         // odd
+//         return x * halfPowerSq;
+//     } else {
+//         // even
+//         return halfPowerSq;
+//     }
+// }
+// int main() {
+//     cout << power(2, 3);
+//     return 0;
+// }
+
+//                          TILING PROBLEM FOR 2XN
+// #include <iostream>
+// #include<string>
+// using namespace std;
+
+// int tilingProblem(int n){
+//     if(n == 0 || n == 1) {
+//         return 1;
+//     }
+//     //vetical
+//     int ans1 = tilingProblem(n-1);//2xn-1
+//     //horizontal
+//     int ans2 = tilingProblem(n-2);//2xn-2
+
+//     return ans1 + ans2;
+// }
+// int main() {
+//     int n = 4;
+//     cout << tilingProblem(n);
+//     return 0;
+// }
+
+//                          REMOVING DUPLICATES FROM STRING
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// void removeDuplicates(string str, string ans, int i, int map[26]) {
+    
+//     if(i == str.size()){
+//         cout << "ans : " << ans << endl;
+//     }
+
+//     char ch = str[i];
+//     int mapIdx = (int)(ch - 'a');
+
+//     if(map[mapIdx] == true) { // duplicate
+//         removeDuplicates(str, ans, i+1, map);
+//     } else { // not duplicate
+//         map[mapIdx] = true;
+//         removeDuplicates(str, ans+str[i], i+1, map);
+//     }
+// }
+
+// int main() {
+//     string str = "appnnacollege";
+//     string ans = "";
+//     int map[26] = {false};
+
+//     removeDuplicates(str, ans, 0, map);
+// }
+//                          REMOVING DUPLICATES FROM STRING WITHOUT INDEX I
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// void removeDuplicates(string str, string ans, int map[26]) {
+    
+//     if(str.size() == 0){
+//         cout << "ans : " << ans << endl;
+//         return;
+//     }
+
+//     char ch = str[str.size() - 1];
+//     int mapIdx = (int)(ch - 'a');
+//     str = str.substr(0, str.size() - 1);
+//     if(map[mapIdx] == true) { // duplicate
+//         removeDuplicates(str, ans, map);
+//     } else { // not duplicate
+//         map[mapIdx] = true;
+//         removeDuplicates(str, ch+ans, map);
+//     }
+// }
+
+// int main() {
+//     string str = "appnnacollege";
+//     string ans = "";
+//     int map[26] = {false};
+
+//     removeDuplicates(str, ans, map);
+//     return 0;
+// }
+
+//                                FRIENDS PAIRING PROBLEM
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// int friendsPairing(int n) {
+//     if(n == 1 || n == 2) {
+//         return n;
+//     }
+
+//     return friendsPairing(n-1) + (n-1)*friendsPairing(n-2);
+// }
+// int main() {
+//     cout << friendsPairing(4) << endl;
+//     return 0;
+// }
+
+//                      BINARY STRING PROBLEM without any consecutive 1 
+#include<iostream>
+#include<string>
 using namespace std;
 
-int power(int x, int n) {
-    if(n == 0) {
-        return 1;
+void binString(int n, int lastPlace, string ans) {
+    if(n == 0){
+        cout << ans << endl;
+        return;
     }
-    int halfPower = power(x, n/2);
-    int halfPowerSq = halfPower * halfPower;
-    if(n%2 != 0) {
-        // odd
-        return x * halfPowerSq;
-    } else {
-        // even
-        return halfPowerSq;
+    if(lastPlace != 1) {
+        binString(n-1, 0, ans + '0');
+        binString(n-1, 1, ans + '1');
+    } else{
+        binString(n-1, 0, ans + '0');
     }
 }
 int main() {
-    cout << power(2, 3);
+    string ans = "";
+    binString(3,0, ans);
     return 0;
 }
